@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSE tables</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css'>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- OWL CAROUSEL CSS Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style type="text/css">
+    a {
+        -webkit-transition: .3s all ease;
+        -o-transition: .3s all ease;
+        transition: .3s all ease;
+    }
+
+
+    .content {
+        padding: 7rem 0;
+    }
+
+    h2 {
+        font-size: 20px;
+        color: #fff;
+    }
+
+    .custom-table {
+        min-width: 900px;
+    }
+
+    .custom-table thead tr,
+    .custom-table thead th {
+        padding-bottom: 30px;
+        border-top: none;
+        border-bottom: none !important;
+        color: #fff;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+    }
+
+    .custom-table tbody th,
+    .custom-table tbody td {
+        color: #777;
+        font-weight: 400;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        font-weight: 300;
+        border: none;
+        -webkit-transition: .3s all ease;
+        -o-transition: .3s all ease;
+        transition: .3s all ease;
+    }
+
+    .custom-table tbody th small,
+    .custom-table tbody td small {
+        color: rgba(255, 255, 255, 0.3);
+        font-weight: 300;
+    }
+
+
+    .custom-table tbody th .more,
+    .custom-table tbody td .more {
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 11px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+    }
+
+    .custom-table tbody tr {
+        -webkit-transition: .3s all ease;
+        -o-transition: .3s all ease;
+        transition: .3s all ease;
+    }
+
+
+
+    .custom-table .td-box-wrap {
+        padding: 0;
+    }
+
+    .custom-table .box {
+        background: #fff;
+        border-radius: 4px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .custom-table .box td,
+    .custom-table .box th {
+        border: none !important;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    tr:nth-of-type(odd) {
+        background: #9cf7e4;
+    }
+
+    tr:nth-of-type(even) {
+        background: #9cf7e4;
+    }
+
+    th {
+        background: blue;
+        color: #ffffff;
+        font-weight: 300;
+    }
+
+    td,
+    th {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+    }
+
+    td:nth-of-type(1) {
+        font-weight: 500 !important;
+    }
+
+    td {
+        font-family: 'Roboto', sans-serif !important;
+        font-weight: 300;
+        line-height: 20px;
+    }
+
+    span {
+        font-style: italic
+    }
+
+    @media only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px) {
+
+        table.responsive,
+        .responsive thead,
+        .responsive tbody,
+        .responsive th,
+        .responsive td,
+        .responsive tr {
+            display: block !important;
+        }
+
+        .responsive thead tr {
+            position: absolute !important;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        .responsive tr {
+            border: 1px solid #ccc;
+        }
+
+        .responsive td {
+            border: none;
+            border-bottom: 1px solid #eee !important;
+            position: relative !important;
+            padding-left: 25% !important;
+        }
+
+        .responsive td:before {
+            position: absolute !important;
+            top: 6px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap !important;
+            font-weight: 500 !important;
+        }
+
+
+        .responsive td:before {
+            content: attr(data-table-header) !important;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="container">
+            <h2 class="mb-5">Table #6</h2>
+            <div class="table-responsive">
+                <table class="table table-striped custom-table" id="sort">
+                    <thead>
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Announcement</th>
+                            <th scope="col">View</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr scope="row">
+                            <td>
+                                1
+                            </td>
+                            <td>
+                            <td>
+                                <p>
+                                                    Greetings from RGUKT Srikakulam Training and
+                                                    Placement Cell We are happy to share that 101
+                                                    students from RGUKT Srikakulam have been selected
+                                                    for the WIPRO company. Please find the mail from the
+                                                    company delegates and the attachment for all the
+                                                    shortlisted students.
+                                                </p>
+                                                <span>Attached files:</span>
+                                                <span> File 1: </span><a href="https://docs.google.com/spreadsheets/d/13jXVA87uGhUH0qL1a8g4CBpyczp36N0y/edit?usp=sharing&ouid=108179814706422782336&rtpof=true&sd=true" target="_blank"><i class="fa fa-folder-open"></i></a>
+                            </td>
+                            <td>+63 983 0962 971</td>
+                            <td>NY University</td>
+                            <td><a href="#" class="more">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>4616</td>
+                            <td><a href="#">Matthew Wasil</a></td>
+                            <td>
+                                Graphic Designer
+                                <small class="d-block">Far far away, behind the word mountains</small>
+                            </td>
+                            <td>+02 020 3994 929</td>
+                            <td>London College</td>
+                            <td><a href="#" class="more">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>9841</td>
+                            <td><a href="#">Sampson Murphy</a></td>
+                            <td>
+                                Mobile Dev
+                                <small class="d-block">Far far away, behind the word mountains</small>
+                            </td>
+                            <td>+01 352 1125 0192</td>
+                            <td>Senior High</td>
+                            <td><a href="#" class="more">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>9548</td>
+                            <td><a href="#">Gaspar Semenov</a></td>
+                            <td>
+                                Illustrator
+                                <small class="d-block">Far far away, behind the word mountains</small>
+                            </td>
+                            <td>+92 020 3994 929</td>
+                            <td>College</td>
+                            <td><a href="#" class="more">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>4616</td>
+                            <td><a href="#">Matthew Wasil</a></td>
+                            <td>
+                                Graphic Designer
+                                <small class="d-block">Far far away, behind the word mountains</small>
+                            </td>
+                            <td>+02 020 3994 929</td>
+                            <td>London College</td>
+                            <td><a href="#" class="more">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>9841</td>
+                            <td><a href="#">Sampson Murphy</a></td>
+                            <td>
+                                Mobile Dev
+                                <small class="d-block">Far far away, behind the word mountains</small>
+                            </td>
+                            <td>+01 352 1125 0192</td>
+                            <td>Senior High</td>
+                            <td><a href="#" class="more">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>9548</td>
+                            <td><a href="#">Gaspar Semenov</a></td>
+                            <td>
+                                Illustrator
+                                <small class="d-block">Far far away, behind the word mountains</small>
+                            </td>
+                            <td>+92 020 3994 929</td>
+                            <td>College</td>
+                            <td><a href="#" class="more">Details</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/moment.min.js'></script>
+    <script src="function.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#sort").DataTable({
+            columnDefs: [
+                { type: 'subfaculty', targets: [3] }
+            ],
+        });
+    });
+    </script>
+</body>
+
+</html>
